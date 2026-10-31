@@ -41,12 +41,6 @@ function coinFlip() {
     }
 }
 
-// Assets
-function preload() {
-  heart = loadImage('Heart.png');
-  star = loadImage('Star.png');
-}
-
 // Colors
 
 function randomColors() {
