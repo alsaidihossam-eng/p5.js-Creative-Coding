@@ -24,7 +24,7 @@ let textTarget;
 let coin;
 let vel = 0
 const easing = 0.08;
-const friction = 0.92;
+const friction = 0.93;
 
 // End Game Variable
 
@@ -43,7 +43,6 @@ function coinFlip() {
 
 // Assets
 function preload() {
-  myCustomFont = loadFont('Cairo-VariableFont_slnt,wght.ttf');
   heart = loadImage('Heart.png');
   star = loadImage('Star.png');
 }
@@ -101,7 +100,6 @@ petals();
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  frameRate(60);
 }
 
 // Click Function
