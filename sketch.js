@@ -16,7 +16,7 @@ let t = 0;
 
 // Text Variables
 
-let myCustomFont, heart, star;
+let myCustomFont;
 let textBoolean = false;
 let textResult;
 let textX = 0;
@@ -33,13 +33,16 @@ const friction = 0.925;
 let counter = 0;
 
 // Text Function
+function preload() {
+  myCustomFont = loadFont('MONTSERRAT-LIGHT.TTF')
+}
 
 function coinFlip() {
     coin = Math.random();
     if (coin > 0.5) {
-      return 'Lucky 🍀';
+      return 'Lucky';
     } else {
-      return 'Not So Lucky 🍀❌';
+      return 'Not So Lucky';
     }
 }
 
@@ -164,6 +167,7 @@ function draw() {
   fill(0,0,0,(textFade));
   textSize(windowHeight / 35);
   textAlign(CENTER)
+  textFont(myCustomFont);
   text(textResult,centerX,centerY + vel);
   
 
