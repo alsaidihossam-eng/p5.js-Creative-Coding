@@ -7,7 +7,9 @@ let colorsArray = [];
 let petalFadeBoolean = false;
 let petalIndex;
 let f = 255
-let noPetals = 10;
+const min = 5;
+const max = 14;
+let noPetals = Math.floor(Math.random() * (max - min + 1)) + min;
 let theta = 0;
 let d = 185;
 let t = 0;
@@ -24,7 +26,7 @@ let textTarget;
 let coin;
 let vel = 0
 const easing = 0.08;
-const friction = 0.93;
+const friction = 0.925;
 
 // End Game Variable
 
@@ -35,9 +37,9 @@ let counter = 0;
 function coinFlip() {
     coin = Math.random();
     if (coin > 0.5) {
-      return '💘 بحبني هيهي';
+      return 'Lucky 🍀';
     } else {
-      return '💔 ما بحبني لاااع';
+      return 'Not So Lucky 🍀❌';
     }
 }
 
@@ -160,7 +162,7 @@ function draw() {
   }
 
   fill(0,0,0,(textFade));
-  textSize(windowHeight / 30);
+  textSize(windowHeight / 35);
   textAlign(CENTER)
   text(textResult,centerX,centerY + vel);
   
@@ -214,8 +216,6 @@ function windowResized() {
 // Restart Function
 
 function restart() {
-  const min = 5;
-  const max = 12;
   noPetals = Math.floor(Math.random() * (max - min + 1)) + min;
   counter = 0;
   randomColors()
